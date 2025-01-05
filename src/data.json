@@ -1,0 +1,191 @@
+{
+    "joueur": {
+        "nom": "Héros",
+        "statistiques": {
+            "ATQ": 10,
+            "DEF": 5,
+            "VIT": 3,
+            "PVMAX": 100,
+            "PV": 100
+        },
+        "inventaire": [
+            {
+                "type": "Potion",
+                "nom": "Potion de Soin",
+                "valeur": 20,
+                "soin": 20
+            },
+            {
+                "type": "Dague",
+                "nom": "Dague",
+                "valeur": 10,
+                "degats": 5
+            }
+        ],
+        "arme": {
+            "nom": "Epée en Bois",
+            "valeur": 20,
+            "attaque": 5
+        },
+        "armure": [
+            {
+                "nom": "Casque en Cuir",
+                "valeur": 20,
+                "defense": 5,
+                "type": "Casque"
+            },
+            null,
+            {
+                "nom": "Jambière en Cuir",
+                "valeur": 20,
+                "defense": 5,
+                "type": "Jambière"
+            },
+            null
+        ]
+    },
+    "ennemis": [
+        {
+            "nom": "Gobelin",
+            "statistiques": {
+                "ATQ": 10,
+                "DEF": 2,
+                "VIT": 1,
+                "PVMAX": 30,
+                "PV": 30
+            },
+            "arme": null,
+            "armure": null
+        },
+        {
+            "nom": "Dragon",
+            "statistiques": {
+                "ATQ": 25,
+                "DEF": 10,
+                "VIT": 0,
+                "PVMAX": 100,
+                "PV": 100
+            },
+            "arme": null,
+            "armure": null
+        },
+        {
+            "nom": "Troll",
+            "statistiques": {
+                "ATQ": 15,
+                "DEF": 8,
+                "VIT": 1,
+                "PVMAX": 50,
+                "PV": 50
+            },
+            "arme": null,
+            "armure": [
+                null,
+                {
+                    "nom": "Armure Lourde",
+                    "valeur": 50,
+                    "defense": 15,
+                    "type": "Torse"
+                },
+                null,
+                null
+            ]
+        },
+        {
+            "nom": "Sorcière",
+            "statistiques": {
+                "ATQ": 18,
+                "DEF": 3,
+                "VIT": 2,
+                "PVMAX": 40,
+                "PV": 40
+            },
+            "arme": {
+                "nom": "Bâton Magique",
+                "valeur": 30,
+                "attaque": 8
+            },
+            "armure": null
+        }
+    ],
+    "salles": [
+        {
+            "nom": "Entrée de la grotte",
+            "description": "Une grotte sombre et humide.",
+            "sorties": {
+                "est": "Salle 1"
+            },
+            "ennemis": ["Gobelin"]
+        },
+        {
+            "nom": "Salle 1",
+            "description": "Une petite salle remplie de détritus.",
+            "sorties": {
+                "ouest": "Entrée de la grotte",
+                "nord": "Salle 2"
+            },
+            "ennemis": ["Troll"]
+        },
+        {
+            "nom": "Salle 2",
+            "description": "Une salle illuminée par des cristaux.",
+            "sorties": {
+                "sud": "Salle 1",
+                "nord": "Salle 3"
+            },
+            "ennemis": ["Sorcière"]
+        },
+        {
+            "nom": "Salle 3",
+            "description": "Une salle aux murs ornés de gravures anciennes.",
+            "sorties": {
+                "sud": "Salle 2",
+                "est": "Salle du boss"
+            },
+            "ennemis": []
+        },
+        {
+            "nom": "Salle du boss",
+            "description": "Une salle immense, avec un dragon au centre.",
+            "sorties": {
+                "ouest": "Salle 3"
+            },
+            "ennemis": ["Dragon"]
+        },
+        {
+            "nom": "Salle 4",
+            "description": "Une salle avec des pièges au sol.",
+            "sorties": {
+                "sud": "Entrée de la grotte",
+                "est": "Salle 5"
+            },
+            "ennemis": ["Gobelin", "Gobelin"]
+        },
+        {
+            "nom": "Salle 5",
+            "description": "Une salle où le bruit de l'eau résonne.",
+            "sorties": {
+                "ouest": "Salle 4",
+                "nord": "Salle 6"
+            },
+            "ennemis": ["Troll"]
+        },
+        {
+            "nom": "Salle 6",
+            "description": "Un sanctuaire abandonné.",
+            "sorties": {
+                "sud": "Salle 5",
+                "est": "Salle secrète"
+            },
+            "ennemis": ["Sorcière"]
+        },
+        {
+            "nom": "Salle secrète",
+            "description": "Une salle cachée remplie de trésors.",
+            "sorties": {
+                "ouest": "Salle 6"
+            },
+            "ennemis": []
+        }
+    ]
+}
